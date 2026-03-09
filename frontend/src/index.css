@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body { background-color: #0a0a0f; color: #e2e8f0; font-family: "DM Sans", sans-serif; }
+  h1, h2, h3 { font-family: "Bebas Neue", cursive; letter-spacing: 0.05em; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #12121a; }
+  ::-webkit-scrollbar-thumb { background: #1e1e2e; border-radius: 3px; }
+}
+
+@layer components {
+  .card { @apply bg-[#12121a] border border-[#1e1e2e] rounded-xl; }
+  .btn { @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 cursor-pointer; }
+  .btn-yes { @apply btn bg-[#00ff88]/10 text-[#00ff88] border border-[#00ff88]/30 hover:bg-[#00ff88]/20 hover:border-[#00ff88]/60; }
+  .btn-no  { @apply btn bg-[#ff3366]/10 text-[#ff3366] border border-[#ff3366]/30 hover:bg-[#ff3366]/20 hover:border-[#ff3366]/60; }
+  .btn-primary { @apply btn bg-violet-700 text-white hover:bg-violet-600; }
+  .input { @apply w-full bg-[#0a0a0f] border border-[#1e1e2e] rounded-lg px-4 py-3 text-slate-200 placeholder-slate-500 focus:outline-none focus:border-violet-500 transition-colors duration-200; }
+  .badge { @apply text-xs font-mono px-2 py-0.5 rounded-full border; }
+}
+
+@layer utilities {
+  @keyframes slide-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fade-in  { from { opacity: 0; } to { opacity: 1; } }
+  .animate-slide-up { animation: slide-up 0.4s ease-out; }
+  .animate-fade-in  { animation: fade-in 0.3s ease-out; }
+}
